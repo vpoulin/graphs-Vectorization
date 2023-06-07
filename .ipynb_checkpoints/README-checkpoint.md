@@ -3,6 +3,8 @@ Graph vectorization and visual exploration
 
 Implement a graph embedding strategy for attributed graphs - this is pretty much cut-and-pasted from the work I did for embedding hyperedges. Here, nodes are already vectorized, provided from the data - see below. 
 
+What we are trying here for graph embedding is similar to what has been tried with the Wasserstein Weisfeiler-Lehman graph kernels. See https://arxiv.org/pdf/1906.01277v2.pdf. However, instead of using Weisfeiler-Lehman kernels for averaging the appropriate vectors at each node, we iteratively use Wasserstein vectorizations on vertex neighborhoods to generate a sequece of node vectors. 
+
 We will treat each node and its neighborhood as hyperedges, one hyperedge per node. We can then vectorize the hyperedges using the Wasserstein vectorizer. This forms a new vectorization of nodes which includes a similarity notion of its n1-neighborhood with other nodes of other graphs. And we can iteratively repeat this process to capture information about neighborhoods of larger radii.
 This sequence of node vectorizations {X_0, X_1, X_2, …} depends on neighborhood structures of larger and larger radii - in a way similar to what is done by the WL kernel. Instead of averaging the node vectors of neighbors, we vectorize the sets of vectors. 
 
