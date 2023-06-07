@@ -1,6 +1,5 @@
 Graph vectorization and visual exploration
 ==============================
-_Author: Tutte Institute for Mathematics and Computing_
 
 Implement a graph embedding strategy for attributed graphs - this is pretty much cut-and-pasted from the work I did for embedding hyperedges. Here, nodes are already vectorized, provided from the data - see below. 
 
